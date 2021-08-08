@@ -2,9 +2,9 @@
 Rails.application.routes.draw do
   root to: "main#index" 
 
-  get "sign_in", to: "main#new"
-  post "sign_in", to: "main#create"
-  delete "logout", to: "main#destroy"
+  get "sign_in", to: "sessions#new"
+  post "sign_in", to: "sessions#create"
+  delete "logout", to: "sessions#destroy"
 
   get "dashboard", to: "dashboard#main"
 

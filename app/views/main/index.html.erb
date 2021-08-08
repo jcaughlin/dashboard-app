@@ -1,22 +1,25 @@
 <div class="d-flex align-items-center flex-column">
   <h1 class="mt-5">Get to Work</h1>
-<% if Current.user%>
-<p class="mt-5">You are already Logged in. Please return to your <%= link_to "Application Dashboard", dashboard_path%></p>
 </div>
+
+<% if Current.user%>
+  <div class="d-flex align-items-center flex-column">
+    <p class="mt-5">You are already Logged in. Please return to your <%= link_to "Application Dashboard", dashboard_path%></p>
+  </div>
 <% else %>
-<div class="d-flex align-items-center justify-content-center">
-<%= form_with url: sign_in_path do |form| %>
-  <div class="mb-3">
-    <%= form.label :login, class:"fw-bold" %>
-    <%= form.text_field :login, class: "form-control" %>
+  <div class="d-flex flex-column mb-3">
+    <%= form_with url: sign_in_path do |form| %>
+      <div class="mb-3 w-50">
+        <%= form.label :login, class:"fw-bold" %>
+        <%= form.text_field :login, class: "form-control" %>
+      </div>
+      <div class="mb-3 w-50">
+        <%= form.label :password, class:"fw-bold" %>
+        <%= form.password_field :password, class: "form-control" %>
+      </div>
+      <div class="mb-3 w-50">
+        <%= form.submit "Sign In", class: "btn btn-success" %>
+      </div>
+    <% end %>
   </div>
-  <div class="mb-3">
-    <%= form.label :password, class:"fw-bold" %>
-    <%= form.password_field :password, class: "form-control" %>
-  </div>
-  <div class="mb-3">
-    <%= form.submit "Sign In", class: "btn btn-success" %>
-  </div>
-  </div>
-<% end %>
 <% end %>
