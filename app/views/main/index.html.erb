@@ -4,10 +4,10 @@
 
 <% if Current.user%>
   <div class="d-flex align-items-center flex-column">
-    <p class="mt-5">You are already Logged in. Please return to your <%= link_to "Application Dashboard", dashboard_path%></p>
+    <p class="mt-5">You are already Logged in. Please return to your <%= link_to "Application Dashboard", dashboard_path(Current.user.id)%></p>
   </div>
 <% else %>
-  <div class="d-flex flex-column mb-3">
+  <!--<div class="d-flex flex-column mb-3"> -->
     <%= form_with url: sign_in_path do |form| %>
       <div class="mb-3 w-50">
         <%= form.label :login, class:"fw-bold" %>
