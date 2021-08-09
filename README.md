@@ -33,12 +33,6 @@ Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.co
 bundle && yarn
 ```
 
-### Set environment variables
-
-Using [Figaro](https://github.com/laserlemon/figaro):
-
-See [config/application.yml.sample](https://github.com/juliendargelos/project/blob/master/config/application.yml.sample) and contact the developer: [contact@juliendargelos.com](mailto:contact@juliendargelos.com) (sensitive data).
-
 ### Initialize the database
 
 ```shell
