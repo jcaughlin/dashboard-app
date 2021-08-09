@@ -1,24 +1,60 @@
-# README
+# Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[project.com](https://project.com)
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+### Clone the repository
 
-* System dependencies
+```shell
+git clone https://github.com/jcaughlin/dashboard-app
+cd dashboard-app
+```
 
-* Configuration
+### Check your Ruby version
 
-* Database creation
+```shell
+ruby -v
+```
 
-* Database initialization
+The project was built with: ruby 3.0.0p0 2020-12-25 revision 95aff21468 arm64-darwin20
 
-* How to run the test suite
+If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+rbenv install 2.5.1
+```
 
-* Deployment instructions
+### Install dependencies
 
-* ...
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+
+```shell
+bundle && yarn
+```
+
+### Set environment variables
+
+Using [Figaro](https://github.com/laserlemon/figaro):
+
+See [config/application.yml.sample](https://github.com/juliendargelos/project/blob/master/config/application.yml.sample) and contact the developer: [contact@juliendargelos.com](mailto:contact@juliendargelos.com) (sensitive data).
+
+### Initialize the database
+
+```shell
+rails db:create db:migrate db:seed
+```
+
+## Serve
+
+```shell
+rails s
+```
+
+## #TODO
+
+1. Dockerize
+2. Create Deployment Environment
+3. Admin for to add applications
+4. Admin to maintain Users
+5. Fix Layout

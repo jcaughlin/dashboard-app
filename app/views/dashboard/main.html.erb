@@ -1,10 +1,12 @@
-<div class="d-flex align-items-center flex-column mb-5">
-  <h1 class="mt-5">Dashboard Controller</h1>
-
-  <h2>Welcome: <%= Current.user.login%> </h2>
+<div class="row mb-5">
+  <h1 class="mt-5 text-center">Dashboard Controller</h1>
+</div>
+<div class="row mb-5">
+  <h2  class="mt-2 text-center">Welcome: <%= Current.user.login%> </h2>
 </div>
 
-
+<div class="row">
+  <div class="col-9">
   <div class="row row-cols-1 row-cols-md-4 g-4">
     <% @enabled_apps.each do |application|%>
        <% if application.default_status%>
@@ -17,21 +19,17 @@
           </div>
       <% end %>
      <% end %>
-  </div>
-<!--
+    </div>
+    </div>
+
 <div class="col-3">
-  <ul class="list-group">
-    <% @disabled_apps.each do |app| %>
-      <li class="list-group-item d-flex justify-content-between align-items-center"><%= app.name %> <%= link_to "Add", add_app_path(app.id), class: "btn btn-sm btn-outline-primary" %></li>
-    <% end %>
-  </ul>
-</div>
--->
-<div class="col-3">
+  <h3>Disabled Applications</h3>
   <ul class="list-group">
     <% @disabled_apps.each do |app| %>
       <%= link_to app.name, add_app_path(app.id), class: "list-group-item d-flex justify-content-between align-items-center list-group-item-action" %>
     <% end %>
   </ul>
+  <p class="text-muted">Click on the application that you want to add to your main dashboard</p>
+</div>
 </div>
 
