@@ -47,8 +47,12 @@ rails s
 
 ## #TODO
 
-1. Dockerize
-2. Create Deployment Environment
-3. Admin for to add applications
-4. Admin to maintain Users
-5. Fix Layout
+1. Create action for user to customer dashboard.
+2. Make Tiles Draggable.
+3. Fix height issue with cards on dashboard.
+4. Figure out how to compile scss.
+5. Improve layout.
+6. Dockerize.
+7. Create Deployment Environment.
+8. Admin for to add applications.
+9. Admin to maintain Users.
