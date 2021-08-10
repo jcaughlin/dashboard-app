@@ -7,29 +7,31 @@
 
 <div class="row">
   <div class="col-9">
-  <div class="row row-cols-1 row-cols-md-4 g-4">
-    <% @user_active_apps.each do |application|%>
-       
-          <div class="card" style="max-width: 18rem;">
-            <div class="card-body">
-              <h3 class="card-title"><%= application.name%></h3>
-              <p class="card-text"><%= application.description %> </p>
-              <%= link_to "Launch", application.link, class: "btn btn-primary" %>
-            </div>
+    <div class="row">
+      <% @user_active_apps.each do |application|%>
+      <div class="col-sm-3 mb-5">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title"><%= application.name%></h3>
+            <p class="card-text"><%= application.description %></p>
           </div>
-     <% end %>
+          <div class="card-footer">
+          <%= link_to "Launch", application.link, class: "btn btn-primary" %>
+          </div>
+        </div>
+        </div>
+        <% end %>
     </div>
-    </div>
+  </div>
 
-<div class="col-3">
-  <h3>Disabled Apps</h3>
-   <% @disabled_appications.each do |disabled_app| %>
-  <ul class="list-group">
-   <%= link_to disabled_app.name, add_app_path(disabled_app.id), class: "list-group-item" %> 
-
-  </ul>
-  <%- end %>
-  <p class="mt-4 text-muted">Click on the application that you want to add to your main dashboard</p>
-</div>
+  <div class="col-3">
+    <h3>Disabled Apps</h3>
+      <% @disabled_appications.each do |disabled_app| %>
+        <ul class="list-group">
+          <%= link_to disabled_app.name, add_app_path(disabled_app.id), class: "list-group-item" %> 
+        </ul>
+      <%- end %>
+    <p class="mt-4 text-muted">Click on the application that you want to add to your main dashboard</p>
+  </div>
 </div>
 
