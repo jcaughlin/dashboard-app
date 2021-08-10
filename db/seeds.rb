@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Application.destroy_all
+
 application_list = [
   ["Google",	"Search Engine", "Red", true,"http://www.google.com"],
   ["Wisc", "UW homepage", "Blue", false, "http://www.wisc.edu"],
@@ -34,3 +37,17 @@ end
 user_list.each do |login, email, password, password_confirmation|
   User.create(login:login, email:email, password:password, password_confirmation:password_confirmation)
 end
+
+
+
+default_apps = Application.where(default_status: "true")
+
+users = User.all
+
+users.each do |user|
+  default_apps.each do |apps|
+    user.applications << apps
+  end
+end
+
+

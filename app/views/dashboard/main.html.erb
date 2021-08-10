@@ -8,8 +8,8 @@
 <div class="row">
   <div class="col-9">
   <div class="row row-cols-1 row-cols-md-4 g-4">
-    <% @enabled_apps.each do |application|%>
-       <% if application.default_status%>
+    <% @user_active_apps.each do |application|%>
+       
           <div class="card" style="max-width: 18rem;">
             <div class="card-body">
               <h3 class="card-title"><%= application.name%></h3>
@@ -17,7 +17,6 @@
               <%= link_to "Launch", application.link, class: "btn btn-primary" %>
             </div>
           </div>
-      <% end %>
      <% end %>
     </div>
     </div>
@@ -25,9 +24,7 @@
 <div class="col-3">
   <h3>Disabled Applications</h3>
   <ul class="list-group">
-    <% @disabled_apps.each do |app| %>
-      <%= link_to app.name, add_app_path(app.id), class: "list-group-item d-flex justify-content-between align-items-center list-group-item-action" %>
-    <% end %>
+   <li>Placeholder</li>
   </ul>
   <p class="text-muted">Click on the application that you want to add to your main dashboard</p>
 </div>
