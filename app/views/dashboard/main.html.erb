@@ -15,19 +15,21 @@
 </div>
 
 <div class="content">
-<div class="card-grid">
-      <% @user_active_apps.each do |application|%>
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title"><%= application.name%></h3>
-            <p class="card-text"><%= application.description %></p>
+  <div class="card-grid">
+    <% @user_active_apps.each do |application|%>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h3><%= application.name%></h3><span class="align-right">&#10060;</span>
           </div>
-          <div class="card-footer">
-            <%= link_to "Launch", application.link, class: "btn btn-primary" %>
-          </div>
+          <p class="card-text"><%= application.description %></p>
         </div>
+        <div class="card-footer">
+            <%= link_to "Launch", application.link, class: "btn btn-primary" %>
+        </div>
+      </div>
         <% end %>
-  </div>
+    </div>
   </div>
   
 
