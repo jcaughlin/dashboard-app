@@ -17,4 +17,11 @@ class DashboardController < ApplicationController
     user.applications << app
     redirect_to dashboard_path(user.id), notice: "Dashboard Successfully Updated!"
   end
+
+  def delete
+    user = Current.user
+    app = Application.find_by(id: params[:id])
+    
+    redirect_to dashboard_path(user.id), notice: "Dashboard Successfully Updated!"
+  end
 end

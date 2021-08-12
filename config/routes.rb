@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   post "sign_in", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
 
-  get "/add/:id", to: "dashboard#add", as: :add_app 
+  get "/add/:id", to: "dashboard#add", as: :add_app
+  get "delete/:id", to: "dashboard#delete", as: :delete_app 
   get "/dashboard/:id", to: "dashboard#main", as: :dashboard
 
   get "benefits", to: "benefits#index"
