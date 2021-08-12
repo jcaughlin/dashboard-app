@@ -16,11 +16,71 @@
 .card{
   max-width:18rem;
   height: 100%;
- 
+ }
+
+ .wrapper {
+   display: grid;
+   grid-gap: 10px;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-areas:
+   "flash flash flash flash"
+   "header header header header"
+   "content content content sidebar"
+   "footer  footer  footer footer";
+   margin-left: auto;
+   margin-right:auto;
+   padding-left: 0.75rem;
+   padding-right: 0.75rem;
+ }
+
+.header {
+  grid-area: header;
 }
+.header h1 {
+  text-align: center;
+  margin-top: 5px;
+}
+.header h2 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.flash {
+  grid-area: flash;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.content {
+  grid-area: content;
+}
+
+.content p {
+  text-align: center;
+}
+
+.footer {
+  grid-area: footer;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.footer p {
+  text-align: center;
+}
+
 .sign-in-form {
   width: 100%;
   max-width: 330px;
   padding: 15px;
   margin: auto;
+}
+
+.card-grid {
+  --auto-grid-min-size: 16rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
 }
