@@ -21,6 +21,7 @@ class DashboardController < ApplicationController
   def delete
     user = Current.user
     app = Application.find_by(id: params[:id])
+    user.applications.delete(app)
     
     redirect_to dashboard_path(user.id), notice: "Dashboard Successfully Updated!"
   end
