@@ -13,11 +13,6 @@
  *= require_tree .
  *= require_self
  */
-.card{
-  max-width:18rem;
-  height: 100%;
- }
-
  .wrapper {
    display: grid;
    grid-gap: 10px;
@@ -32,6 +27,11 @@
    padding-left: 0.75rem;
    padding-right: 0.75rem;
  }
+
+ #page-container {
+  position: relative;
+  min-height: 100vh;
+}
 
 .header {
   grid-area: header;
@@ -61,7 +61,10 @@
 
 .footer {
   grid-area: footer;
+  position: absolute;
+  bottom: 0;
   margin: auto;
+  height: 5rem; 
   width: 100%;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.03);
@@ -83,6 +86,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
   grid-gap: 1rem;
+}
+
+.card{
+  max-width:18rem;
+  height: 100%;
+ }
+
+.one-card {
+  border: 2px solid #e7e7e7;
+  border-radius: 4px;
+  padding: .5rem;
 }
 
 .align-right{

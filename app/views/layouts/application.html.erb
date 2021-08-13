@@ -12,11 +12,13 @@
   </head>
 
   <body>
-    <%= render partial: "shared/navbar" %>
-    <div class="wrapper">
-      <%= render partial: "shared/flash" %>
-      <%= yield %>
-      <%= render partial: "shared/footer" %>
+    <div id="page-container">
+      <%= render partial: "shared/navbar" %>
+      <div class="wrapper">
+        <%= render partial: "shared/flash" %>
+        <%= yield %>
+        <%= render partial: "shared/footer" %>
+      </div>
     </div>
   </body>
 </html>

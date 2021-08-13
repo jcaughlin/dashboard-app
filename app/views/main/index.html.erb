@@ -3,12 +3,13 @@
 </div>
 
 <% if Current.user%>
-  <div class="row mb-5">
-    <p class="mt-5 text-center">You are already Logged in. Please return to your <%= link_to "Application Dashboard", dashboard_path(Current.user.id)%></p>
+  <div class="content">
+    <div class="row mb-5">
+      <p class="mt-5 text-center">You are already Logged in. Please return to your <%= link_to "Application Dashboard", dashboard_path(Current.user.id)%></p>
+    </div>
   </div>
 <% else %>
-<div class="content">
-  
+  <div class="content">
     <%= form_with url: sign_in_path do |form| %>
       <div class="mb-3 w-50">
         <%= form.label :login, class:"fw-bold" %>
@@ -24,5 +25,3 @@
     <% end %>
   </div>
 <% end %>
-
-</div>
