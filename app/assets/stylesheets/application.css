@@ -13,6 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+   box-sizing: border-box;
+ }
+
+ #page-container {
+  position: relative;
+  min-height: 100vh;
+}
  .wrapper {
    display: grid;
    grid-gap: 10px;
@@ -21,17 +30,12 @@
    "flash flash flash flash"
    "header header header header"
    "content content content sidebar"
-   "footer  footer  footer footer";
+   "footer footer footer footer";
    margin-left: auto;
    margin-right:auto;
-   padding-left: 0.75rem;
-   padding-right: 0.75rem;
+   padding-left: 5rem;
+   padding-right: 5rem;
  }
-
- #page-container {
-  position: relative;
-  min-height: 100vh;
-}
 
 .header {
   grid-area: header;
@@ -61,16 +65,18 @@
 
 .footer {
   grid-area: footer;
-  position: absolute;
+  position: relative; 
+  left:0;
   bottom: 0;
   margin: auto;
-  height: 5rem; 
+  height: 5rem;
   width: 100%;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.03);
 }
 
 .footer p {
+  margin-top:1rem;
   text-align: center;
 }
 

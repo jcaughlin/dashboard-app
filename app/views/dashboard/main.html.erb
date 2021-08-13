@@ -5,7 +5,7 @@
 </div>
 
  <div class="sidebar">
-    <h3>Disabled Apps</h3>
+    <h3 class="text-center">Disabled Apps</h3>
       <% @disabled_appications.each do |disabled_app| %>
         <ul class="list-group">
           <%= link_to disabled_app.name, add_app_path(disabled_app.id), class: "list-group-item" %> 
@@ -15,15 +15,16 @@
 </div>
 
 <div class="content">
+<h3>Active apps</h3>
   <div class="card-grid">
     <% @user_active_apps.each do |application|%>
       <div class="card">
         <div class="card-body">
           <div class="card-title">
             <h3 class="d-inline"><%= application.name%></h3>
-            <%= link_to delete_app_path(application.id) do %>
-              <p class="d-inline text-end">&#10060;</p>
-            <% end %>
+              <%= link_to delete_app_path(application.id) do %>
+                <span class="d-inline">&#10060;</span>
+              <% end %>
           </div>
           <p class="card-text"><%= application.description %></p>
         </div>
@@ -31,9 +32,10 @@
             <%= link_to "Launch", application.link, class: "btn btn-primary" %>
         </div>
       </div>
-        <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
+  
   
 
 
