@@ -11,6 +11,9 @@ import "channels"
 import "bootstrap"
 import "stylesheets/application"
 
+window.Rails = Rails;
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import "controllers"

@@ -1,8 +1,7 @@
 class DashboardController < ApplicationController
-  def main
-   
-    @user_active_apps = Current.user.applications
 
+  def main
+      @user_active_apps = Current.user.applications
     # TABLE NAMES
     # applications
     # users
@@ -24,5 +23,11 @@ class DashboardController < ApplicationController
     user.applications.delete(app)
     
     redirect_to dashboard_path(user.id), notice: "Dashboard Successfully Updated!"
+  end
+
+  def move
+    user = Current.user
+    user.applications.insert_at(params[:position].to_i)
+    head :ok
   end
 end

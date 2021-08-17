@@ -56,3 +56,36 @@ rails s
 7. Create Deployment Environment.
 8. Admin for to add applications.
 9. Admin to maintain Users.
+
+## Notes
+
+8/17/2021
+Adding persistent Sortable Feature to Dashboard
+
+1. Add position column to user_applications table
+
+    ```shell
+    rails generate migration add_position_to_user_applications position:Integer
+    ```
+
+2. Add acts_as_list
+
+    ```shell
+    bundle add acts_as_list
+    ```
+
+3. Add [Stimulus](https://stimulus.hotwired.dev/)
+
+    ```shell
+    https://stimulus.hotwired.dev/
+    ```
+
+4. Rename app/javascript/controllers/hello_controller.js to app/javascript/controllers/drag_controller.js
+
+    This isn't required, but it is a more descriptive name for the file.
+
+5. Add [SortableJS](https://sortablejs.github.io/Sortable/)
+
+    ```shell
+    yarn add sortablejs
+    ```
