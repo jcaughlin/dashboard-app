@@ -8,6 +8,7 @@
 
 User.destroy_all
 Application.destroy_all
+UserApplication.destroy_all
 
 application_list = [
   ["Google",	"Search Engine", "Red", true,"http://www.google.com"],
@@ -45,8 +46,9 @@ default_apps = Application.where(default_status: "true")
 users = User.all
 
 users.each do |user|
-  default_apps.each do |apps|
-    user.applications << apps
+  default_apps.each_with_index do |app, index|
+    user.applications << app
+    UserApplication.find_by(user_id: user.id, application_id: app.id).update(position: index)
   end
 end
 
