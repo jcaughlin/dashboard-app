@@ -3,7 +3,6 @@ class Application < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :color, presence: true
-  validates :default_status, presence: true
   validates :link, presence: true
  
   has_many :user_applications

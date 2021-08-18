@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# rails db:reset reruns migations and seed file.
+
 User.destroy_all
 Application.destroy_all
 UserApplication.destroy_all

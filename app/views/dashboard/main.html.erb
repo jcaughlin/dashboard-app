@@ -5,7 +5,7 @@
 
 <div class="sidebar">
   <h3 class="text-center">Disabled Apps</h3>
-    <% @disabled_appications.each do |disabled_app| %>
+    <% @disabled_applications.each do |disabled_app| %>
       <ul class="list-group">
         <%= link_to disabled_app.name, add_app_path(disabled_app.id), class: "list-group-item" %> 
       </ul>
