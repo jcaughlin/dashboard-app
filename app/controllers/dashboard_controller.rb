@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
 
-  def main
+  def index
     @user_active_apps = Current.user.applications
     # TABLE NAMES
     # applications

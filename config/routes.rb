@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get "/add/:id", to: "dashboard#add", as: :add_app
   get "delete/:id", to: "dashboard#delete", as: :delete_app 
-  get "/dashboard/:id", to: "dashboard#main", as: :dashboard
+  get "/dashboard/:id", to: "dashboard#index", as: :dashboard
   patch "/dashboard/:id/move", to: "dashboard#move"
 
   get "benefits", to: "benefits#index"
