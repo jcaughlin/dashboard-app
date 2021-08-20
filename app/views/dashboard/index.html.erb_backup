@@ -1,18 +1,23 @@
-<div class="row">
+<div class="header">
   <h1>Dashboard Controller</h1>
   <h2  class="mt-2 text-center">Welcome: <%= Current.user.login%> </h2>
 </div>
 
+<div class="sidebar">
+  <h3 class="text-center">Disabled Apps</h3>
+    <% @disabled_applications.each do |disabled_app| %>
+      <ul class="list-group">
+        <%= link_to disabled_app.name, add_app_path(disabled_app.id), class: "list-group-item" %> 
+      </ul>
+    <%- end %>
+  <p class="mt-4 text-muted">Click on the application that you want to add to your main dashboard</p>
+</div>
 
-
-
-<div class="row mb-4">
-  <div class="col-md-8">
-    <h3>Active apps</h3>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-      <!--<div class="row row-cols-1 row-cols-md-4 g-4">-->
+<div class="content">
+  <h3>Active apps</h3>
+  <div class="card-grid">
         <% @user_active_apps.each do |application|%>
-          <div class="card">
+          <div class="card grid-square">
             <div class="card-body">
               <div class="card-title">
                 <h3 class="d-inline"><%= application.name%></h3>
@@ -27,20 +32,8 @@
             </div> <!-- End Card Footer -->
           </div> <!-- End Card -->
         <% end %>
-      </div>
-  </div> <!--End Content Div -->
-
-  <div class="col-md-4">
-    <h3 class="text-center">Disabled Apps</h3>
-      <% @disabled_applications.each do |disabled_app| %>
-        <ul class="list-group">
-          <%= link_to disabled_app.name, add_app_path(disabled_app.id), class: "list-group-item" %> 
-        </ul>
-      <%- end %>
-    <p class="mt-4 text-muted">Click on the application that you want to add to your main dashboard</p>
-  </div>
-</div>
-
+  </div> <!--End End Card Grid -->
+</div> <!--End Content Div -->
 
   
   

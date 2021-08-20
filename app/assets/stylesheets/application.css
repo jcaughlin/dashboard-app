@@ -18,49 +18,14 @@
    box-sizing: border-box;
  }
 
- #page-container {
+ #page-controller {
   position: relative;
   min-height: 100vh;
-}
- .wrapper {
-   display: grid;
-   grid-gap: 10px;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-   grid-template-areas:
-   "flash flash flash flash"
-   "header header header header"
-   "content content content sidebar"
-   "footer footer footer footer";
-   margin-left: auto;
-   margin-right:auto;
-   padding-left: 5rem;
-   padding-right: 5rem;
  }
 
-.header {
-  grid-area: header;
-}
-.header h1 {
+h1, h2, h3 {
   text-align: center;
   margin-top: 5px;
-}
-.header h2 {
-  text-align: center;
-  margin-top: 5px;
-}
-
-.flash {
-  grid-area: flash;
-}
-.sidebar {
-  grid-area: sidebar;
-}
-.content {
-  grid-area: content;
-}
-
-.content p {
-  text-align: center;
 }
 
 .card-title a {
@@ -68,8 +33,7 @@
 }
 
 .footer {
-  grid-area: footer;
-  position: relative; 
+  position:relative;
   left:0;
   bottom: 0;
   margin: auto;
@@ -91,23 +55,11 @@
   margin: auto;
 }
 
-.card-grid {
-  --auto-grid-min-size: 16rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
-  grid-gap: 1rem;
-}
-
 .card{
   max-width:18rem;
-  height: 100%;
+  min-height:15rem;
  }
 
-.one-card {
-  border: 2px solid #e7e7e7;
-  border-radius: 4px;
-  padding: .5rem;
-}
 
 .align-right{
   text-align: right;
