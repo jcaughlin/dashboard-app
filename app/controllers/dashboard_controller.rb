@@ -29,6 +29,6 @@ class DashboardController < ApplicationController
     end
 
     def set_user_apps
-      @user_active_apps = Current.user.applications
+      @user_active_apps = @user.applications
     end
 end

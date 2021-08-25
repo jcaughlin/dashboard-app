@@ -40,18 +40,3 @@ end
 user_list.each do |login, email, password, password_confirmation|
   User.create(login:login, email:email, password:password, password_confirmation:password_confirmation)
 end
-
-
-
-default_apps = Application.where(default_status: "true")
-
-users = User.all
-
-users.each do |user|
-  default_apps.each_with_index do |app, index|
-    user.applications << app
-    UserApplication.find_by(user_id: user.id, application_id: app.id).update(position: index)
-  end
-end
-
-
