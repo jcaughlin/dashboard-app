@@ -26,8 +26,7 @@ export default class extends Controller {
         url: this.data.get("url").replace(":id",id),
         type: 'PATCH',
         data: data
-      })
-      console.log(event)
+      }) 
     }
 }
 

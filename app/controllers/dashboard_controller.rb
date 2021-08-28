@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
   end
 
   def sort
-    UserApplication.insert_at(params[:position].to_i)
+    UserApplication.where(application_id: params[:id]).update_all(position: params[:position].to_i)
     head :ok
   end
 
