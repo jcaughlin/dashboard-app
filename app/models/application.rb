@@ -5,6 +5,6 @@ class Application < ApplicationRecord
   validates :color, presence: true
   validates :link, presence: true
  
-  has_many :user_applications
+  has_many :user_applications, -> { order(position: :asc) }
   has_many :users, :through => :user_applications
 end

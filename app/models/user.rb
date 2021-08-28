@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :login, presence: true 
 
-  has_many :user_applications
+  has_many :user_applications, -> { order(position: :asc) }
   has_many :applications, :through => :user_applications
 
   after_create :assign_default_apps
