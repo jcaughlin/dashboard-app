@@ -18,14 +18,7 @@ class DashboardController < ApplicationController
   end
 
   def sort
-    UserApplication.where(id: params[:id]).update_all(position: params[:position].to_i)
-    head :ok
-  end
-
-  def sort2
-    # UserApplication.where(id: params[:id]).insert_at(params[:position].to_i)
-    # UserApplication.insert_at(params[:position].to_i)
-    # UserApplication.update_all(position: params[:position].to_i)
+    UserApplication.find_by(application_id: params[:id], user_id: Current.user.id).insert_at(params[:position].to_i)
     head :ok
   end
 
